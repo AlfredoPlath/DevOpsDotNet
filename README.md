@@ -1,5 +1,4 @@
-[![Build Status](https://alfredoplath.visualstudio.com/NetCorePro/_apis/build/status/NetCorePro-CI)](https://alfredoplath.visualstudio.com/NetCorePro/_build/latest?definitionId=4)
-
+[![Build Status](https://alfredoplath.visualstudio.com/NetCoreProj/_apis/build/status/NetCoreProj%20-%20CI)](https://alfredoplath.visualstudio.com/NetCoreProj/_build/latest?definitionId=8)
 # Sample ASP.NET Core application for Azure Pipelines docs
 
 For information on how to use this repository, see [.NET Core](https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core).
