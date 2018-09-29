@@ -2,7 +2,7 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core?view=vsts
 
 pool:
-  vmImage: 'VS2017-Win2016'
+  vmImage: 'Ubuntu 16.04'
   
 variables:
   buildConfiguration: 'Release'
