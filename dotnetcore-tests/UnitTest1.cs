@@ -15,10 +15,10 @@ namespace dotnetcore_tests
           HomeController controller = new HomeController();
 
           // Act
-          ViewResult result = controller.About() as ViewResult;
+          ViewResult result = (ViewResult) controller.About();
 
           // Assert
-          Assert.AreEqual("Your application description page.", result.ViewData["Message"]);
+          Assert.AreEqual("Your application description paggg.", result.ViewData["Message"]);
         }
 
         [TestMethod]
