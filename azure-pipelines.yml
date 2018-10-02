@@ -13,15 +13,11 @@ steps:
     dotnet test dotnetcore-tests --configuration $(buildConfiguration) --logger trx
     dotnet publish --configuration $(buildConfiguration) --output $BUILD_ARTIFACTSTAGINGDIRECTORY
 
-jobs:
-- job: PublicarTests
-  task: PublishTestResults@2
+  -task: PublishTestResults@2
   inputs:
     testRunner: VSTest
     testResultsFiles: '**/*.trx'
 
-- job: Build
-    dependsOn: PublicarTests
-    condition: succeeded()
-    task: PublishBuildArtifacts@1
+    
+    -task: PublishBuildArtifacts@1
     
