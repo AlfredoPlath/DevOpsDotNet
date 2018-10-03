@@ -9,17 +9,17 @@ variables:
 
 jobs: 
 - job: Tests
-steps:
-- script: |
-    dotnet build --configuration $(buildConfiguration)
-    dotnet test dotnetcore-tests --configuration $(buildConfiguration) --logger trx
-- task: PublishTestResults@2
-  inputs:
-    testRunner: VSTest
-    testResultsFiles: '**/*.trx'
+    steps:
+    - script: |
+            dotnet build --configuration $(buildConfiguration)
+            dotnet test dotnetcore-tests --configuration $(buildConfiguration) --logger trx
+    - task: PublishTestResults@2
+      inputs:
+        testRunner: VSTest
+        testResultsFiles: '**/*.trx'
     
 - job: Publish
-steps:
-- script: |
-    dotnet publish --configuration $(buildConfiguration) --output $BUILD_ARTIFACTSTAGINGDIRECTORY  
-- task: PublishBuildArtifacts@1
+   steps:
+   - script: |
+            dotnet publish --configuration $(buildConfiguration) --output $BUILD_ARTIFACTSTAGINGDIRECTORY  
+   - task: PublishBuildArtifacts@1
