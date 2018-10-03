@@ -20,6 +20,7 @@ jobs:
         testResultsFiles: '**/*.trx'
     
 -job: Publish
+    dependsOn: Test
+    condition: succeeded()
+    steps:
     - task: PublishBuildArtifacts@1
-        dependsOn: Test
-        condition: succeeded()
