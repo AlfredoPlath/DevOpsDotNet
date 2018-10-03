@@ -13,13 +13,15 @@ jobs:
     - script: |
             dotnet build --configuration $(buildConfiguration)
             dotnet test dotnetcore-tests --configuration $(buildConfiguration) --logger trx
+            
     - task: PublishTestResults@2
       inputs:
         testRunner: VSTest
         testResultsFiles: '**/*.trx'
     
 - job: Publish
-   steps:
-   - script: |
+    steps:
+    - script: |
             dotnet publish --configuration $(buildConfiguration) --output $BUILD_ARTIFACTSTAGINGDIRECTORY  
-   - task: PublishBuildArtifacts@1
+            
+    - task: PublishBuildArtifacts@1
